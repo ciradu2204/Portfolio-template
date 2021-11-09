@@ -12,14 +12,14 @@ const Services = () => {
  
     const getServices =  () => {
         setLoading(true);
-         axios.get('http://localhost:8000/wp-json/wp/v2/Services?_embed&filter[orderby]=date&order=asc')
+         axios.get('http://34.145.124.47/wp-json/acf/v3/services?&filter[orderby]=date&order=asc')
             .then((response) => {
                 setLoading(false);
                  for(let data of response.data){
                   let service = {
                       "id": data.id,
-                      "title": data.title.rendered,
-                      "image": data._embedded['wp:featuredmedia'][0].source_url
+                      "title": data.acf.name,
+                      "image":  data.acf.service_image.url
                   }
                   setServices(services => [...services, service]);
                  }

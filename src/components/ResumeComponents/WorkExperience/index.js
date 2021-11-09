@@ -2,10 +2,10 @@ import axios from "axios";
 import { nanoid } from "nanoid";
 import { useEffect, useState } from "react";
 import  Loader  from "../../SharedComponents/Loader";
-import { wp_strip_all_tags } from "../../SharedComponents/stripTags";
 import Pagination from "./Pagination/pagination";
-import {Wrapper, WorkExperienceHeader, WorkExperienceMainWrapper, WorkExperienceWrapper, Title, Role, Date} from './WorkExperienceElements';
+import {Wrapper, WorkExperienceHeader, WorkExperienceMainWrapper, WorkExperienceWrapper, Title, Role, DateC} from './WorkExperienceElements';
 import AOS from 'aos';
+import {dateInPast} from '../../SharedComponents/dateInPast';
 import 'aos/dist/aos.css';
 
 const WorkExperience = () =>{
@@ -28,14 +28,14 @@ const WorkExperience = () =>{
 
     const getWorkExperience = async () => {
         setLoading(true);
-       await axios.get('http://localhost:8000/wp-json/wp/v2/work_experience?_embed&filter[orderby]=date&order=desc')
+       await axios.get('http://34.145.124.47/wp-json/acf/v3/WorkExperience?&filter[orderby]=date&order=asc')
            .then((response) =>{
             for(let data of response.data){
-                 const arr = data.content.rendered.split("\n\n\n\n");
                 let workExperience = {
-                    "title" : data.title.rendered,
-                     "role" :arr[0],
-                     "date": arr[1]
+                    "title" :  data.acf.name,
+                    "role":data.acf.role,
+                    "startDate": data.acf.start_date,
+                    "endDate": data.acf.end_date
                 }
                 setWorkExperience(prev => [...prev, workExperience])
 
@@ -72,8 +72,8 @@ const WorkExperience = () =>{
                 {loading ? <Loader/> : currentWorkExp.map((workExperience) => (
                     <WorkExperienceWrapper key={nanoid()} data-aos="fade-up">
                     <Title>{workExperience.title.toUpperCase()}</Title>
-                    <Role>{wp_strip_all_tags(workExperience.role)}</Role>
-                    <Date>{wp_strip_all_tags(workExperience.date)}</Date>
+                    <Role>{(workExperience.role)}</Role>
+                    <DateC>{(workExperience.startDate)}-{(dateInPast(workExperience.endDate)? workExperience.endDate: "Present" )}</DateC>
                     </WorkExperienceWrapper>
                 ))   }
              </WorkExperienceMainWrapper>

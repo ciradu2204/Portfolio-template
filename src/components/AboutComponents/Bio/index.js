@@ -23,20 +23,24 @@ const Bio = () =>{
         AOS.init({ duration: 1000 });
         const getAboutInfo= async() =>{
             setLoading(true);
-             await axios.get('http://localhost:8000/wp-json/wp/v2/About_me?_embed&filter[orderby]=date&order=asc')
+             await axios.get('http://34.145.124.47/wp-json/acf/v3/About_me?&filter[orderby]=date&order=asc')
               .then((response) =>{
                 setLoading(false);
-                 for(let data of response.data){
-                       if(data.title.rendered === "Bio"){
-                          setBio( {"content": filter_tags(data.content.rendered), "image": data._embedded['wp:featuredmedia'][0].source_url })
-                       }else{
-                           let Hobby = {
-                               "content": filter_tags(data.content.rendered), 
-                               "image": data._embedded['wp:featuredmedia'][0].source_url
-                           }
-                          setHobbies(hobbies => [...hobbies, Hobby ])
-                      }
+                let hobbies = {};
+                 for(var i=0; i< 1; i++){
+                      setBio({"content": filter_tags(response.data[i].acf.bio), "image": response.data[i].acf.bio_image.url })
+                    
+                    hobbies = response.data[i].acf.hobbies
+
                 }
+                for(let hobby of Object.keys(hobbies)){
+                     let Hobby = {
+                       "content": filter_tags(hobbies[hobby].description), 
+                       "image": hobbies[hobby].image.url
+                   }
+                  setHobbies(hobbies => [...hobbies, Hobby ])
+                 }
+
                 }).catch((error) =>{
                 setLoading(false);
                 console.log(error)

@@ -45,7 +45,7 @@ letter-spacing: 0.05em;
 margin:2px 0;
 text-align: center;
 `
-export const Date = styled.h3`
+export const DateC = styled.h3`
  margin:2px 0;
  letter-spacing: 0.05em;
 font-weight: normal;

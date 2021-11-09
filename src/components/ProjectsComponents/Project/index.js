@@ -82,7 +82,7 @@ const Project = () => {
         <ProjectTitle >{project.title.toUpperCase()}</ProjectTitle>
         <ProjectDescription>{parse(project.project_description)} </ProjectDescription>
         <ProjectVisual src={project.sampleVisual_image}/>
-        <ProjectVisualDescription>{project.sampleVisual_description}</ProjectVisualDescription>
+        <ProjectVisualDescription>{parse(project.sampleVisual_description)}</ProjectVisualDescription>
         </ProjectWrapper>
          <Next onClick={NextHandle} onMouseOver={handleMouseNextOver} onMouseOut={handleMouseNextOut} />
          {mouseOverNext && titleNext? <NextProjectName>{titleNext}</NextProjectName>:null}

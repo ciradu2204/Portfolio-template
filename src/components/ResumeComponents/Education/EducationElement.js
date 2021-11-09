@@ -79,7 +79,7 @@ letter-spacing: 0.05em;
 
 `
 
-export const Date = styled.h3`
+export const DateC = styled.h3`
 font-style: normal;
 font-weight: 500;
 margin:2px 0;

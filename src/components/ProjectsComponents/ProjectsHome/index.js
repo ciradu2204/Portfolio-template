@@ -12,16 +12,16 @@ const ProjectsHome = () =>{
 
     const getProjects  = async() =>{
         setLoading(true);
-    await axios.get('http://localhost:8000/wp-json/wp/v2/Projects?_embed&filter[orderby]=date&order=desc')
+    await axios.get('http://34.145.124.47/wp-json/acf/v3/Project?&filter[orderby]=date&order=asc')
          .then((response) => {
             setLoading(false);
              for(let data of response.data){
               let project = {
-                   "title": data.title.rendered,
-                   "image": data._embedded['wp:featuredmedia'][0].source_url,
-                    "project_description": data.content.rendered,
+                   "title": data.acf.name,
+                   "image": data.acf.projectimage.url,
+                    "project_description": data.acf.project_description,
                     "sampleVisual_image": data.acf.samplevisual.url,
-                    "sampleVisual_description": data.acf.samplevisual.description          
+                    "sampleVisual_description": data.acf.sample_visual_description          
                }
               setProjects(projects => [...projects, project]);
              }

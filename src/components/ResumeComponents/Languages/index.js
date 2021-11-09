@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
 import Loader  from "../../SharedComponents/Loader";
-import { wp_strip_all_tags } from "../../SharedComponents/stripTags";
 import {Wrapper, LaunguagesHeader,LanguagesWrapper, LanguageWrapper,Title, Level } from './LanguagesElements'
 import { nanoid } from "nanoid";
 import AOS from 'aos';
@@ -14,12 +13,12 @@ const Languages = () =>{
 
     const getLanguages = async () => {
         setLoading(true)
-        await axios.get('http://localhost:8000/wp-json/wp/v2/languages?_embed&filter[orderby]=date&order=desc')
+        await axios.get('http://34.145.124.47/wp-json/acf/v3/languages?&filter[orderby]=date&order=asc')
         .then((response) =>{
          for(let data of response.data){
               let language = {
-                 "title" : data.title.rendered,
-                 "description": data.content.rendered
+                 "title" : data.acf.name,
+                 "languageLevel": data.acf.language_level
                }
                setLanguages(prev => [...prev, language ])
 
@@ -48,8 +47,8 @@ const Languages = () =>{
              <LanguagesWrapper>
                    { languages.map((language) => (
                      <LanguageWrapper key={nanoid()} data-aos="fade-up">
-                       <Title>  {wp_strip_all_tags(language.title)} </Title>
-                       <Level> {wp_strip_all_tags(language.description)}</Level>
+                       <Title>  {language.title.toUpperCase()} </Title>
+                       <Level> {language.languageLevel.toUpperCase()}</Level>
                      </LanguageWrapper>
                    ))
                    

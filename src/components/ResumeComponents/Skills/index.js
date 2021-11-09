@@ -14,11 +14,11 @@ const Skills = () => {
 
     const getSkills = async () => {
         setLoading(true)
-        await axios.get('http://localhost:8000/wp-json/wp/v2/skills?_embed&filter[orderby]=date&order=desc')
+        await axios.get('http://34.145.124.47/wp-json/acf/v3/skills?&filter[orderby]=date&order=asc')
             .then((response) => {
                 for (let data of response.data) {
                     let skill = {
-                        "title": data.title.rendered,
+                        "title": data.acf.name,
                     }
                     setSkills(prev => [...prev, skill])
 

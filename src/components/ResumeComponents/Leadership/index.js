@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import  Loader  from '../../SharedComponents/Loader';
-import { wp_strip_all_tags } from '../../SharedComponents/stripTags';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faAward} from '@fortawesome/free-solid-svg-icons/faAward'
 import {LeadershipHeader, LeadershipMainWrapper, Prev, LeadershipsWrapper, LeadershipWrapper, LeadershipDetails, Date, Title, Next, Wrapper} from './LeadershipElements'
 import { nanoid } from 'nanoid';
+import {dateInPast} from '../../SharedComponents/dateInPast';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
  const Leadership = () => {
@@ -16,12 +16,13 @@ import 'aos/dist/aos.css';
     const [endId, setEndId] = useState(4); 
     const getLeadershipPosition = async() => {
         setLoading(true);
-        await axios.get('http://localhost:8000/wp-json/wp/v2/leadership?_embed&filter[orderby]=date&order=desc')
+        await axios.get('http://34.145.124.47/wp-json/acf/v3/leadership?&filter[orderby]=date&order=asc')
             .then((response) =>{
              for(let data of response.data){
                   let leadershipPosition = {
-                     "title" : data.title.rendered,
-                      "date" :data.content.rendered,
+                     "title" : data.acf.name,
+                     "startDate": data.acf.startdate,
+                    "endDate": data.acf.enddate
                   }
                   setLeadershipPositions(prev => [...prev, leadershipPosition])
  
@@ -68,8 +69,8 @@ import 'aos/dist/aos.css';
                 <LeadershipWrapper key={nanoid()}  data-aos="fade-up">
                     <FontAwesomeIcon icon={faAward} size="2x"/>
                     <LeadershipDetails>
-                        <Title>{wp_strip_all_tags(element.title).toUpperCase()}</Title>
-                        <Date>{wp_strip_all_tags(element.date).toUpperCase()}</Date>
+                        <Title>{(element.title).toUpperCase()}</Title>
+                        <Date>{element.startDate}-{dateInPast(element.endDate)? element.endDate: "Present" } </Date>
                     </LeadershipDetails>
                 </LeadershipWrapper>
             ) )}

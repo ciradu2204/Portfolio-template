@@ -35,7 +35,7 @@ const BlogHome = () => {
     useEffect(() => {
         const getBlogs =async () => {
             setLoading(true);
-            await axios.get('http://localhost:8000/wp-json/wp/v2/Blogs?_embed&filter[orderby]=date&order=desc')
+            await axios.get('http://34.145.124.47/wp-json/acf/v3/Blogs?&filter[orderby]=date&order=asc')
                 .then((response) => {
                     setLoading(false);
                     let elementsWidth = [];
@@ -44,9 +44,9 @@ const BlogHome = () => {
                         let width = calculateImageWidth(id, elementsWidth)
                         elementsWidth.push(width);
                         let blog = {
-                            "title": data.title.rendered,
-                            "image": data._embedded['wp:featuredmedia'][0].source_url,
-                            "description": data.content.rendered,
+                            "title": data.acf.name,
+                            "image": data.acf.blog_image.url,
+                            "description":data.acf.blog_description ,
                             "width": width
                         }
                         setBlogs(blogs => [...blogs, blog]);
