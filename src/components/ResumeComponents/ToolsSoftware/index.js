@@ -14,7 +14,7 @@ const ToolsSoftware = () =>{
 
     const getTools = async () => {
         setLoading(true)
-        await axios.get('http://34.145.124.47/wp-json/acf/v3/Softwaretools?&filter[orderby]=date&order=asc')
+        await axios.get('http://35.212.233.193/wp-json/acf/v3/Softwaretools?&filter[orderby]=date&order=asc')
         .then((response) =>{
          for(let data of response.data){
               let tool = {

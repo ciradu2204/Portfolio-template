@@ -36,7 +36,7 @@ const Education = () => {
     setLoading(true);
     await axios
       .get(
-        "http://34.145.124.47/wp-json/wp/v2/Education?_embed&filter[orderby]=date&order=desc"
+        "http://35.212.233.193/wp-json/wp/v2/Education?_embed&filter[orderby]=date&order=desc"
       )
       .then((response) => {
         setLoading(false);
