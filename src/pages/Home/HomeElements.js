@@ -20,19 +20,6 @@ cursor:pointer;
 animation: ${moveUpDownAnimation} 2s infinite linear 
 `
 
-export const Header = styled.div`
-font-size: 50px; 
-width: 100%;
-color:#020202;
-text-align:center;
-gap:10px;
- 
-@media (max-width: 1000px) {
-    font-size:40px;
- }
- 
-`
-
 export const Bold = styled.strong`
   font-weight:bold;
 `

@@ -28,8 +28,6 @@ const BlogHome = () => {
         }
     }
 
-  
-
 
 
     useEffect(() => {
