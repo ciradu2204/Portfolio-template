@@ -3,6 +3,7 @@ import axios from 'axios';
 import {nanoid} from 'nanoid';
 import { ProjectsWrapper, ProjectWrapper, ProjectImage, ProjectTitle, ProjectLink, Arrow } from "./ProjectsHomeElements";
 import Loader from '../../SharedComponents/Loader';
+import {API} from '../../../constants/index'
 import { Link } from "react-router-dom";
 import Footer from "../../SharedComponents/Footer";
 const ProjectsHome = () =>{
@@ -12,16 +13,16 @@ const ProjectsHome = () =>{
 
     const getProjects  = async() =>{
         setLoading(true);
-    await axios.get('http://35.212.233.193/wp-json/acf/v3/Project?&filter[orderby]=date&order=asc')
+    await axios.get(`${API}/wp-json/wp/v2/work?&filter[orderby]=date&order=asc`)
          .then((response) => {
             setLoading(false);
              for(let data of response.data){
               let project = {
-                   "title": data.acf.name,
-                   "image": data.acf.projectimage.url,
-                    "project_description": data.acf.project_description,
-                    "sampleVisual_image": data.acf.samplevisual.url,
-                    "sampleVisual_description": data.acf.sample_visual_description          
+                   "title": data.acf.project_title,
+                   "image": data.acf.project_image.url,
+                    "project_description": data.acf.description,
+                    "sampleVisual_image": data.acf.sample_visual.url,
+                    "sampleVisual_description": data.acf.sampleVisual_description          
                }
               setProjects(projects => [...projects, project]);
              }

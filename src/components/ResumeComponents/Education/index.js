@@ -17,6 +17,8 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { dateInPast } from "../../SharedComponents/dateInPast";
+import {API} from '../../../constants/index';
+
 
 const Education = () => {
   const initializeEndId = () => {
@@ -36,14 +38,14 @@ const Education = () => {
     setLoading(true);
     await axios
       .get(
-        "http://35.212.233.193/wp-json/wp/v2/Education?_embed&filter[orderby]=date&order=desc"
+        `${API}/wp-json/wp/v2/education?&filter[orderby]=date&order=asc`
       )
       .then((response) => {
         setLoading(false);
 
         for (let data of response.data) {
           let education = {
-            title: data.acf.name,
+            title: data.acf.school_name,
             logo: data.acf.logo.url,
             major: data.acf.major,
             startDate: data.acf.start_date,

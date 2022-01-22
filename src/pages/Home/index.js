@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import SocialMediaChannels from '../../components/SharedComponents/SocialMedias'
 import Services from '../../components/HomeComponents/Services';
 import Brands from '../../components/HomeComponents/Brands';
-import {DownIcon, Wrapper, Bold } from './HomeElements';
+import {DownIcon, Wrapper } from './HomeElements';
 import Form from '../../components/HomeComponents/ContactForm'
 import Footer from '../../components/SharedComponents/Footer';
 import Header from '../../components/HomeComponents/Header'
@@ -22,7 +22,7 @@ const Home = () => {
         <>
             <Wrapper>
                 <SocialMediaChannels direction="column" color="#1E2128" />
-                <Header >HI I”m  <Bold>Randy Soumahoro</Bold></Header>
+                <Header/>
             </Wrapper>
             <DownIcon onClick={executeScroll} />
             <div ref={myRef}>

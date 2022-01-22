@@ -4,6 +4,7 @@ import Loader from "../../SharedComponents/Loader";
 import { BlogsWrapper, BlogWrapper, BlogImage, BlogTitle, ReadMore } from './BlogHomeElements'
 import { nanoid } from "nanoid";
 import Footer from "../../SharedComponents/Footer";
+import {API} from '../../../constants/index'
 
 const BlogHome = () => {
     const [loading, setLoading] = useState(false);
@@ -33,7 +34,7 @@ const BlogHome = () => {
     useEffect(() => {
         const getBlogs =async () => {
             setLoading(true);
-            await axios.get('http://35.212.233.193/wp-json/acf/v3/Blogs?&filter[orderby]=date&order=asc')
+            await axios.get(`${API}/wp-json/wp/v2/blogs?&filter[orderby]=date&order=asc`)
                 .then((response) => {
                     setLoading(false);
                     let elementsWidth = [];
@@ -42,7 +43,7 @@ const BlogHome = () => {
                         let width = calculateImageWidth(id, elementsWidth)
                         elementsWidth.push(width);
                         let blog = {
-                            "title": data.acf.name,
+                            "title": data.acf.blog_title,
                             "image": data.acf.blog_image.url,
                             "description":data.acf.blog_description ,
                             "width": width

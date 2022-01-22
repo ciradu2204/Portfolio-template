@@ -5,6 +5,8 @@ import Loader from '../../SharedComponents/Loader';
 import { SkillsHeader, SkillsWrapper, UL, LI } from "./SkillsElements";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {API} from '../../../constants/index';
+
 
 const Skills = () => {
 
@@ -14,7 +16,7 @@ const Skills = () => {
 
     const getSkills = async () => {
         setLoading(true)
-        await axios.get('http://35.212.233.193/wp-json/acf/v3/skills?&filter[orderby]=date&order=asc')
+        await axios.get(`${API}/wp-json/wp/v2/Skills?&filter[orderby]=date&order=asc`)
             .then((response) => {
                 for (let data of response.data) {
                     let skill = {

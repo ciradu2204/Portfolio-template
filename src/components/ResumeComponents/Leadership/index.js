@@ -8,6 +8,8 @@ import { nanoid } from 'nanoid';
 import {dateInPast} from '../../SharedComponents/dateInPast';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {API} from '../../../constants/index';
+
  const Leadership = () => {
     
     const [leadershipPositions, setLeadershipPositions] = useState([]); 
@@ -16,13 +18,13 @@ import 'aos/dist/aos.css';
     const [endId, setEndId] = useState(4); 
     const getLeadershipPosition = async() => {
         setLoading(true);
-        await axios.get('http://35.212.233.193/wp-json/acf/v3/leadership?&filter[orderby]=date&order=asc')
+        await axios.get(`${API}/wp-json/wp/v2/Leadership?&filter[orderby]=date&order=asc`)
             .then((response) =>{
              for(let data of response.data){
                   let leadershipPosition = {
-                     "title" : data.acf.name,
-                     "startDate": data.acf.startdate,
-                    "endDate": data.acf.enddate
+                     "title" : data.acf.role,
+                     "startDate": data.acf.start_date,
+                    "endDate": data.acf.end_date
                   }
                   setLeadershipPositions(prev => [...prev, leadershipPosition])
  

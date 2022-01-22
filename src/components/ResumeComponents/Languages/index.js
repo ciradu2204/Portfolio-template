@@ -5,6 +5,8 @@ import {Wrapper, LaunguagesHeader,LanguagesWrapper, LanguageWrapper,Title, Level
 import { nanoid } from "nanoid";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {API} from '../../../constants/index';
+
  
 const Languages = () =>{
 
@@ -13,12 +15,12 @@ const Languages = () =>{
 
     const getLanguages = async () => {
         setLoading(true)
-        await axios.get('http://35.212.233.193//wp-json/acf/v3/languages?&filter[orderby]=date&order=asc')
+        await axios.get(`${API}/wp-json/wp/v2/languages?&filter[orderby]=date&order=asc`)
         .then((response) =>{
          for(let data of response.data){
               let language = {
                  "title" : data.acf.name,
-                 "languageLevel": data.acf.language_level
+                 "languageLevel": data.acf.fluency
                }
                setLanguages(prev => [...prev, language ])
 

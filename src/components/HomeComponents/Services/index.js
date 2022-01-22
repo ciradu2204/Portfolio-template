@@ -4,6 +4,8 @@ import Loader from '../../SharedComponents/Loader';
 import { ServicesWrapper, ServicesHeader, ServiceWrapper, ServiceImg, ServiceTitle, Wrapper, LineSvg } from './ServicesElements';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {API} from '../../../constants/index'
+
  
 const Services = () => {
 
@@ -12,7 +14,7 @@ const Services = () => {
  
     const getServices =  () => {
         setLoading(true);
-         axios.get('http://35.212.233.193/wp-json/acf/v3/services?&filter[orderby]=date&order=asc')
+         axios.get(`${API}/wp-json/wp/v2/Services?&filter[orderby]=date&order=asc`)
             .then((response) => {
                 setLoading(false);
                  for(let data of response.data){

@@ -7,6 +7,8 @@ import {Wrapper, WorkExperienceHeader, WorkExperienceMainWrapper, WorkExperience
 import AOS from 'aos';
 import {dateInPast} from '../../SharedComponents/dateInPast';
 import 'aos/dist/aos.css';
+import {API} from '../../../constants/index';
+
 
 const WorkExperience = () =>{
      const getWorkExperiencePerPage = () =>{
@@ -28,11 +30,11 @@ const WorkExperience = () =>{
 
     const getWorkExperience = async () => {
         setLoading(true);
-       await axios.get('http://35.212.233.193/wp-json/acf/v3/WorkExperience?&filter[orderby]=date&order=asc')
+       await axios.get( `${API}/wp-json/wp/v2/work_experience?&filter[orderby]=date&order=asc`)
            .then((response) =>{
             for(let data of response.data){
                 let workExperience = {
-                    "title" :  data.acf.name,
+                    "title" :  data.acf.company_name,
                     "role":data.acf.role,
                     "startDate": data.acf.start_date,
                     "endDate": data.acf.end_date

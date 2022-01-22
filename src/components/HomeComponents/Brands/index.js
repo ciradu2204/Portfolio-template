@@ -7,6 +7,8 @@ import { BrandImage, BrandsHeader, BrandsWrapper, BrandWrapper } from "./BrandsE
 import { LineSvg } from "../Services/ServicesElements";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {API} from '../../../constants/index'
+
 
 const Brand = () => {
   const initializeNextId = () => {
@@ -24,14 +26,14 @@ const Brand = () => {
 
   const getBrands = async () => {
     setLoading(true);
-    await axios.get('http://35.212.233.193/wp-json/acf/v3/Brand?&filter[orderby]=date&order=asc')
+    await axios.get(`${API}/wp-json/wp/v2/Brand?&filter[orderby]=date&order=asc`)
       .then((response) => {
         setLoading(false);
         for (let data of response.data) {
           let brand = {
             "id": data.id,
-            "title": data.acf.name,
-            "image": data.acf.brandimage.url
+            "title": data.acf.Name,
+            "image": data.acf.Brandimage.url
           }
           setBrands(brands => [...brands, brand])
         }
