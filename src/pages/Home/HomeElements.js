@@ -3,7 +3,6 @@ import {HiOutlineArrowNarrowDown} from 'react-icons/hi';
 import { keyframes } from 'styled-components';
 
 const moveUpDownAnimation = keyframes`
- 
  from {
     transform: translateY(0%);
   }
@@ -27,8 +26,7 @@ export const Bold = styled.strong`
 
 export const Wrapper = styled.div`
 display:flex;
-height:85vh; 
+height:85vh;
 overflow:auto;
 align-items:center;
 `
- 
