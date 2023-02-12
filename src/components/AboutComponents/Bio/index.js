@@ -1,71 +1,25 @@
-import { useEffect, useState } from "react";
-import Loader from '../../SharedComponents/Loader';
-import Hobbies from "../Hobbies";
-import {AboutWrapper, Content, BioWrapper, BioImage } from "./BioElements";
+ import {AboutWrapper, Content, BioWrapper, BioImage } from "./BioElements";
 import Footer from "../../SharedComponents/Footer";
-import axios from 'axios';
-import {API} from '../../../constants/index'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
+ import 'aos/dist/aos.css';
+ import bioImage from "../../../img/bioImg.jpeg"
 const Bio = () =>{
-
-    const [bio, setBio] = useState([]); 
-    const [hobbies, setHobbies] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    const filter_tags = (content) => {
-        return  content.replace(/<p>(.*)<\/p>/g, "$1\n");
-    }
-    useEffect (() =>{
-        AOS.init({ duration: 1000 });
-        const getAboutInfo= async() =>{
-            setLoading(true);
-             await axios.get(`${API}/wp-json/wp/v2/About_info?&filter[orderby]=date&order=asc`)
-              .then((response) =>{
-                setLoading(false);
-                let hobbies = {};
-                 for(var i=0; i< 1; i++){
-                      setBio({"content": filter_tags(response.data[i].acf.bio.bio), "image": response.data[i].acf.bio.my_image.url })
-                    
-                    hobbies = response.data[i].acf.hobbies
-
-                }
-                   
-                 for(let hobby of Object.values(hobbies)){
-                      let Hobby = {
-                       "content": filter_tags(hobby.description), 
-                       "image": hobby.sample_image.url
-                   }
-                  setHobbies(hobbies => [...hobbies, Hobby ])
-                 }
-
-                }).catch((error) =>{
-                setLoading(false);
-                console.log(error)
-              })
-    
-        
-    
-        }
-        getAboutInfo();
-    }, [])
 
     return(
         <>
-         {loading? <Loader/> :
          <div>
          <AboutWrapper>
         <BioWrapper>
-            <BioImage data-aos="fade-up" src={bio.image}/>
-            <Content data-aos="fade-up">{bio.content}</Content>
+            <BioImage data-aos="fade-up" src={bioImage}/>
+            <Content data-aos="fade-up">
+            <p>When I was young, I always thought that I would become a chemical engineer considering my problem-solving, curiosity, and critical thinking skills. I went on and majored in math, physics, and chemistry in my highschool. But I realised that chemistry was not my cup of tea. </p>
+            <p>When I finished high school, I was lucky enough to be part of the “She Can Code Bootcamp'' by Igire Rwanda. I learnt about Html, CSS, JavaScript, Bootstrap, and git and I built a fashion website as my first project to centralise all the fashion brands in Rwanda. Since then, I have been obsessed with the idea of using software to solve practical problems.</p>
+            <p>My passion and effort for technology led me to win a scholarship to attend the African Leadership College(ALC), Mauritius which has a partnership with Glasgow Caledonian University(GCU). During the 4 years pursuing a computing degree, I learnt new programming languages, data structures, and algorithms with pretty much the same fascination that drove me to code. I also secured internships with different companies such as ALX, Collab Lab, Jenkins, and CircleEdges to mention a few. I am currently a front-end developer intern with the Boston's Children hospital as part of the Outreachy Program.</p>
+            <p>When I am not coding, I blog on my experience and the knowledge I have gained so far in my career journey. In addition, I am a women techmakers ambassador where I organize events to introduce young people especially women to different technologies and help build a strong developer community in Rwanda.</p>
+            </Content>
         </BioWrapper>
-         
-        <Hobbies hobbies={hobbies} loading={loading}/>
         </AboutWrapper>
         <Footer/>
         </div>
-         }
        </>
     )
 

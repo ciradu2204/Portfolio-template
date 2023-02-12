@@ -1,7 +1,6 @@
 import  Bio  from "../../components/AboutComponents/Bio"
 import { AboutHeader } from "./AboutElements"
 
- 
  const About = () =>{
 
      return(

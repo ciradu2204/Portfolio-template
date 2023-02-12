@@ -12,7 +12,7 @@ const Header = () => {
 
     return (
         <>
-        {<HeaderElement data-aos="fade-up">Cynthia Iradukunda</HeaderElement>}
+        {<HeaderElement data-aos="fade-up">Hello, I'm Cynthia Iradukunda</HeaderElement>}
         </>
     )
 
