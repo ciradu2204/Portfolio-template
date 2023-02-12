@@ -14,9 +14,9 @@ const moveUpDownAnimation = keyframes`
  `
 export const DownIcon = styled(HiOutlineArrowNarrowDown)`
 color:rgba(224, 163, 45, 0.97);
-font-size: 50px; 
+font-size: 50px;
 cursor:pointer;
-animation: ${moveUpDownAnimation} 2s infinite linear 
+animation: ${moveUpDownAnimation} 2s infinite linear;
 `
 
 export const Bold = styled.strong`

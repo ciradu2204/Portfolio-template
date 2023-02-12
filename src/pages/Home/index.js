@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import SocialMediaChannels from '../../components/SharedComponents/SocialMedias'
-import Services from '../../components/HomeComponents/Services';
-import Brands from '../../components/HomeComponents/Brands';
+import Technologies from '../../components/HomeComponents/Technologies';
 import {DownIcon, Wrapper } from './HomeElements';
 import Form from '../../components/HomeComponents/ContactForm'
 import Footer from '../../components/SharedComponents/Footer';
 import Header from '../../components/HomeComponents/Header'
+import Services from '../../components/HomeComponents/Services'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Home = () => {
@@ -28,7 +28,7 @@ const Home = () => {
             <div ref={myRef}>
             <Services  />
             </div>
-            <Brands />
+            <Technologies />
             <Form />
             <Footer direction="column" color="green" copyright="© 2021 - Celine Ishimwe. All rights reserved. Kigali, Rwanda" gap="10%" />
         </>

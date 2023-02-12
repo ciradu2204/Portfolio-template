@@ -1,4 +1,4 @@
-import {Prev } from './BrandsElements';
+import {Prev } from './TechnologiesElements';
 const prevIcon = (props) =>{
 
 

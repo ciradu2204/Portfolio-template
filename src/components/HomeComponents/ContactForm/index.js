@@ -1,6 +1,6 @@
 
 import { React, useEffect, useState } from "react";
-import { LineSvg } from "../Services/ServicesElements";
+import { LineSvg } from "../Services/servicesElements";
 import { Wrapper, FormWrapper, FormHeader, ElementWrapper, Label, Input, TextArea, Error, Success } from "./ContactFormElements";
 import AOS from 'aos';
 import 'aos/dist/aos.css';

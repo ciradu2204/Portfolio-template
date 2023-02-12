@@ -13,13 +13,13 @@ justify-content: center;
 
 `
 export const Wrapper = styled.div`
-background: #D4D4D4; 
+background: #D4D4D4;
 `
 
 export const ServicesHeader = styled.h1`
- font-size: 25px;
+ font-size: 1.5rem;
  font-style: normal;
- line-height: 75px;
+ line-height: 3.5rem;
  font-weight: bolder;
  letter-spacing: 0.2em;
  text-align:center;
@@ -40,13 +40,8 @@ export const ServiceWrapper = styled.div`
 text-align:center;
  `
 
-export const ServiceImg = styled.img`
-  width:156px;
-  height:100px;
-`
-
 export const ServiceTitle = styled.h3`
 font-weight: bolder;
 color: rgba(2, 2, 2, 0.81);
-font-size:25px;
+font-size:1rem;
 `

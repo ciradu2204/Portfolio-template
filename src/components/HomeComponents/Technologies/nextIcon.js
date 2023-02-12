@@ -1,4 +1,4 @@
-import {Next } from './BrandsElements';
+import {Next } from './TechnologiesElements';
 
 const nextIcon = (props) =>{
 
