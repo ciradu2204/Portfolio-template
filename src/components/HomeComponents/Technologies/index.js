@@ -81,7 +81,7 @@ const Technologies = () => {
       <LineSvg data-aos="fade-up" viewBox="0, 0, 50,50">
         <path
           d="
-                 M -180 20
+                 M -155 20
                  L -80 11
                  C -80 11 -50 6 -50 5
                  L -10 20

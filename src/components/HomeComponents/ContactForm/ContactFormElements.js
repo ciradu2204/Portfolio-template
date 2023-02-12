@@ -7,22 +7,22 @@ height:fit-content;
 
 export const FormWrapper=styled.form`
 display:flex;
-margin-top:5px;
-gap:20px;
+margin-top:0.5rem;
+gap:1rem;
 flex-direction:column;
 `
 
 export const FormHeader= styled.h1`
-font-size: 25px;
+font-size: 1.5rem;
 font-style: normal;
-line-height: 75px;
+line-height: 3.5rem;
 font-weight: bolder;
 letter-spacing: 0.2em;
 text-align:center;
 `
 
 export const ElementWrapper= styled.div`
-display:flex; 
+display:flex;
 width: 50%;
 position:relative;
 align-self:center;
@@ -43,7 +43,7 @@ height:100%;
 width:100%;
 outline:none;
 cursor:pointer;
-font-size:18px;
+font-size: 1.5rem;
 background: transparent;
 -webkit-appearance:none;
 border:none;
@@ -65,8 +65,8 @@ border:none;
 
 export const Label = styled.label`
 position: relative;
-top: -19px;
-left:40px;
+top: -1rem;
+left:3rem;
 width:fit-content;
 background-color:#D4D4D4;
 letter-spacing:0.15em;
@@ -82,7 +82,7 @@ left:5px;
 height:100%;
 width:100%;
 border:none;
-font-size:18px;
+font-size:1.5rem;
 outline:none;
 `
 
@@ -90,7 +90,7 @@ export const Error = styled.h3`
 color:red;
 width: 48%;
 margin:0;
-font-size:15px;
+font-size:1.5rem;
 align-self:center;
 font-weight:bold;
 `
@@ -99,7 +99,7 @@ export const Success = styled.h3`
 color:green;
 width: 100%;
 margin:0;
-font-size:15px;
+font-size:1.5rem;
 text-align:center;
 font-weight:bold;
 `

@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             <Technologies />
             <Form />
-            <Footer direction="column" color="green" copyright="© 2021 - Celine Ishimwe. All rights reserved. Kigali, Rwanda" gap="10%" />
+            <Footer direction="column" color="green" copyright="© 2023 - Iradukunda Cynthia. All rights reserved. Kigali, Rwanda" gap="10%" />
         </>
     )
 }

@@ -9,7 +9,7 @@ import emailjs from 'emailjs-com';
 const ContactForm = () => {
     const [toSend, setToSend] = useState({
         from_name: '',
-        to_name: 'Randy Sumahoro',
+        to_name: 'Cynthia Iradukunda',
         message: '',
         reply_to: '',
     });
@@ -76,7 +76,7 @@ const ContactForm = () => {
                 .then((response) => {
                     setLoading(false);
                     setSuccess(true);
-                    setToSend({ from_name: '', to_name: 'Randy Sumahoro', message: '', reply_to: '', })
+                    setToSend({ from_name: '', to_name: 'Cynthia Iradukunda', message: '', reply_to: '', })
                     setTimeout(() => {
                         setSuccess(false);
                     }, 3000);
@@ -90,7 +90,7 @@ const ContactForm = () => {
                 });
 
         }
-    }   
+    }
 
     useEffect(() => {
          AOS.init({ duration: 1000 })
