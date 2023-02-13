@@ -7,8 +7,8 @@ const Blogs = () => {
 
           <>
  
-                    <BlogsHeader>BLOG</BlogsHeader>
-                    <BlogsIntro>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis a sit iaculis purus turpis risus pellentesque nec eget. Amet amet rhoncus in accumsan neque, bibendum. In faucibus sit amet ut. Pellentesque proin sed accumsan eu </BlogsIntro>
+                    <BlogsHeader>BLOGS</BlogsHeader>
+                    <BlogsIntro>The following blogs share knowledge and experience that I have acquired through the different programs, courses, and books I have read.  </BlogsIntro>
                     <BlogHome />
  
           </>

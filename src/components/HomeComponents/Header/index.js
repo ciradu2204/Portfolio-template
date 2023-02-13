@@ -9,7 +9,6 @@ const Header = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 })
       }, [])
-
     return (
         <>
         {<HeaderElement data-aos="fade-up">Hello, I'm Cynthia Iradukunda</HeaderElement>}

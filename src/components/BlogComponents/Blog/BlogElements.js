@@ -36,7 +36,6 @@ font-size:20px;
 `
 export const BlogImage = styled.img`
 width:100%;
-object-fit:cover;
 height:300px;
 `
 export const NextBlogName = styled.h4`

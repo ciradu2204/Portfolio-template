@@ -17,13 +17,12 @@ function App() {
         <Switch>
           <Route path="/" exact component = {Home}/>
           <Route path="/about"  component = {About}/>
-          <Route path="/work" exact  component = {Projects}/>
-          <Route path="/blog" exact component = {Blogs}/>
+          <Route path="/projects" exact  component = {Projects}/>
+          <Route path="/blogs" exact component = {Blogs}/>
           <Route path="/cv"  component = {CV}/>
-          <Route path="/work/:id" component={Project}/>
-          <Route path="/blog/:id" component={Blog}/>
-       
-        </Switch>       
+          <Route path="/projects/:id" component={Project}/>
+          <Route path="/blogs/:id" component={Blog}/>
+        </Switch>
     </div>
   );
 }

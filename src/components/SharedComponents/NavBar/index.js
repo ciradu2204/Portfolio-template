@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import {Nav, Bars, NavMenu, NavLink, CloseBar} from './NavbarElements'
 const NavBar = () =>{
-    
      const [barClicked, setBarClicked] = useState(true);
      const [closeBarClicked, setCloseBarClicked] = useState(false);
      const [menuMobileOpen, setMenuMobileOpen] = useState(false);
@@ -29,19 +28,19 @@ const NavBar = () =>{
             <CloseBar onClick={OnCloseBarClick} closebarclicked={closeBarClicked?1:0}/>
             <NavMenu  menumobileopen= {menuMobileOpen?1:0}> 
                 <NavLink to="/" exact activeClassName="any" datalinktext='HOME' >
-                    HOME 
+                    HOME
                 </NavLink>
                 <NavLink to="/about" activeClassName="any" datalinktext='ABOUT'>
-                    ABOUT 
+                    ABOUT
                 </NavLink>
-                <NavLink to="/work" activeClassName="any" datalinktext='WORK'>
-                    WORK 
+                <NavLink to="/Projects" activeClassName="any" datalinktext='PROJECTS'>
+                    PROJECTS
                 </NavLink>
-                <NavLink to="/blog" activeClassName="any" datalinktext='BLOG'>
-                    BLOG 
+                <NavLink to="/blogs" activeClassName="any" datalinktext='BLOGS'>
+                    BLOGS
                 </NavLink>
                 <NavLink to="/cv" activeClassName="any" datalinktext='CV'>
-                    CV 
+                    CV
                 </NavLink>
 
             </NavMenu>

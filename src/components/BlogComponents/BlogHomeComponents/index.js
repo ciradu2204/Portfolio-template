@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from 'axios';
 import Loader from "../../SharedComponents/Loader";
 import { BlogsWrapper, BlogWrapper, BlogImage, BlogTitle, ReadMore } from './BlogHomeElements'
 import { nanoid } from "nanoid";
 import Footer from "../../SharedComponents/Footer";
-import {API} from '../../../constants/index'
 
 const BlogHome = () => {
     const [loading, setLoading] = useState(false);
@@ -19,7 +18,7 @@ const BlogHome = () => {
         } else if (id === 2) {
             return "40vw"
         } else if (id === 3) {
-            return "40vw";  
+            return "40vw";
         } else {
             if (array[id - 1] === array[id - 2]) {
                 return array[id - 3]
@@ -28,40 +27,44 @@ const BlogHome = () => {
             }
         }
     }
-
+    const getBlogs =  useCallback(async() => {
+        setLoading(true);
+        try {
+            const blogs =  await axios.get(`https://dev.to/api/articles?username=ciradu2204`)
+            let elementsWidth = [];
+            let id = 0;
+            for (let data of blogs.data) {
+             let width = calculateImageWidth(id, elementsWidth)
+             elementsWidth.push(width);
+             try {
+              const blogPerId = await axios.get(`https://dev.to/api/articles/${data.id}?username=ciradu2204`)
+              const blog = {
+                    "image": data.social_image,
+                    "title": blogPerId.data.title,
+                    "description":blogPerId.data.body_html ,
+                    "width": width
+              }
+              setBlogs(blogs => [...blogs, blog]);
+              id = id +1;
+              setLoading(false)
+             } catch (error) {
+                setLoading(false)
+                console.log(error)
+             }
+            }
+        } catch (error) {
+            setLoading(false)
+            console.log(error)
+        }
+    }, [])
 
 
     useEffect(() => {
-        const getBlogs =async () => {
-            setLoading(true);
-            await axios.get(`${API}/wp-json/wp/v2/blogs?&filter[orderby]=date&order=asc`)
-                .then((response) => {
-                    setLoading(false);
-                    let elementsWidth = [];
-                    let id = 0;
-                    for (let data of response.data) {
-                        let width = calculateImageWidth(id, elementsWidth)
-                        elementsWidth.push(width);
-                        let blog = {
-                            "title": data.acf.blog_title,
-                            "image": data.acf.blog_image.url,
-                            "description":data.acf.blog_description ,
-                            "width": width
-                        }
-                        setBlogs(blogs => [...blogs, blog]);
-                        id = id +1;
-                    }
-                }).catch((error) => {
-                    setLoading(false);
-                    console.log(error)
-                })
-    
-        }
         getBlogs();
         return () => {
             setBlogs([]);
         };
-    }, [])
+    }, [getBlogs])
 
     return (
         <>
@@ -72,7 +75,7 @@ const BlogHome = () => {
                             <BlogWrapper key={nanoid()} id={index + 1}>
                                 <BlogImage src={blog.image} width={blog.width} />
                                 <BlogTitle id={index + 1}>{blog.title.toUpperCase()}</BlogTitle>
-                                <ReadMore to={{ pathname: `/blog/${index}`, state: { blog: blogs } }} id={index + 1}>Read More</ReadMore>
+                                <ReadMore to={{ pathname: `/blogs/${index}`, state:{blogs}}} id={index + 1}>Read More</ReadMore>
                             </BlogWrapper>
                         ))
                         }

@@ -10,7 +10,7 @@ const Blog = () => {
     const params = useParams();
     const location = useLocation();
     const [id, setId] = useState(params.id);
-    const blogs = location.state.blog;
+    const blogs = location.state.blogs;
     const [mouseOverPrev, setMouseOverPrev] = useState(false);
     const [mouseOverNext, setMouseOverNext] = useState(false);
     const [titlePrev, setTitlePrev] = useState('');
@@ -74,15 +74,15 @@ const Blog = () => {
         <>
             {blogs.filter((element, index) => index === parseInt(id)).map((blog) => (
                 <BlogMainWrapper key={nanoid()}>
-                    <Prev onClick={prevHandle} onMouseOver={handleMousePrevOver} onMouseOut={handleMousePrevOut} />
-                    {mouseOverPrev && titlePrev ? <PrevBlogName>{titlePrev}</PrevBlogName> : null}
+                    {id > 0 && <Prev onClick={prevHandle} onMouseOver={handleMousePrevOver} onMouseOut={handleMousePrevOut} />}
+                    {id > 0 && mouseOverPrev && titlePrev ? <PrevBlogName>{titlePrev}</PrevBlogName> : null}
                     <BlogWrapper>
                         <BlogImage src={blog.image} />
                         <BlogTitle >{blog.title.toUpperCase()}</BlogTitle>
                         <BlogDescription>{parse(blog.description)} </BlogDescription>
                     </BlogWrapper>
-                    <Next onClick={NextHandle} onMouseOver={handleMouseNextOver} onMouseOut={handleMouseNextOut} />
-                    {mouseOverNext && titleNext ? <NextBlogName>{titleNext}</NextBlogName> : null}
+                    {id < blogs.length-1 && <Next onClick={NextHandle} onMouseOver={handleMouseNextOver} onMouseOut={handleMouseNextOut} />}
+                    {id < blogs.length-1 && mouseOverNext && titleNext ? <NextBlogName>{titleNext}</NextBlogName> : null}
                 </BlogMainWrapper>
             ))}
             <Footer />
