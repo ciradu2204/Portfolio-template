@@ -4,6 +4,7 @@ import { useParams, useLocation } from "react-router";
 import { nanoid } from "nanoid";
 import parse from 'html-react-parser';
 import Footer from "../../SharedComponents/Footer";
+ 
 import { BlogMainWrapper, BlogImage, Prev, PrevBlogName, BlogWrapper, BlogTitle, BlogDescription, Next, NextBlogName } from "./BlogElements";
 const Blog = () => {
 
@@ -15,6 +16,7 @@ const Blog = () => {
     const [mouseOverNext, setMouseOverNext] = useState(false);
     const [titlePrev, setTitlePrev] = useState('');
     const [titleNext, setTitleNext] = useState('');
+
 
     const prevHandle = () => {
         if (id > 0) {

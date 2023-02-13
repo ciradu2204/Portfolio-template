@@ -1,5 +1,5 @@
 import {AiFillTwitterCircle} from "react-icons/ai";
-import {SiMailDotRu} from  'react-icons/si';
+import {AiOutlineMail} from  'react-icons/ai';
 import { GrLinkedin } from "react-icons/gr";
 import styled from "styled-components"
 
@@ -12,7 +12,7 @@ padding: 1rem;
 justify-content: center;
 `
 
-export const Mail = styled(SiMailDotRu)`
+export const Mail = styled(AiOutlineMail)`
 color: ${props => props.iconcolor || "#C0A062"};
 font-size: 1rem;
 `
