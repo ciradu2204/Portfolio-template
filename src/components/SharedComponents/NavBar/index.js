@@ -39,10 +39,12 @@ const NavBar = () =>{
                 <NavLink to="/blogs" activeClassName="any" datalinktext='BLOGS'>
                     BLOGS
                 </NavLink>
+                <NavLink to="/events" activeClassName="any" datalinktext='EVENTS'>
+                    EVENTS
+                </NavLink>
                 <NavLink to="/cv" activeClassName="any" datalinktext='CV'>
                     CV
                 </NavLink>
-
             </NavMenu>
 
         </Nav>

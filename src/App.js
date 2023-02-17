@@ -8,6 +8,7 @@
  import CV from './pages/CV';
  import { ThemeProvider, createTheme } from '@mui/material/styles';
  import { Switch, Route } from 'react-router-dom';
+ import Events from './pages/Events';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/projects" exact  component = {Projects}/>
           <Route path="/blogs" exact component = {Blogs}/>
           <Route path="/cv"  component = {CV}/>
+          <Route path="/events"  component = {Events}/>
           <Route path="/blogs/:id" component={Blog}/>
         </Switch>
     </div>
