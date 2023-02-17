@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Prev from './prevIcon';
 import Next from './nextIcon';
 import { TechnologiesHeader, TechnologiesWrapper, TechnologyWrapper, TechnologyTitle } from "./TechnologiesElements";
 import { LineSvg } from "../Services/servicesElements";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { GrReactjs } from "react-icons/gr";
 import { FaAws, FaCss3, FaHtml5} from "react-icons/fa";
 import {DiJavascript1} from "react-icons/di"
@@ -71,14 +69,11 @@ const Technologies = () => {
     }
   }
 
-  useEffect(() => {
-    AOS.init({ duration: 1000 })
-  }, [])
 
   return (
     <>
-      <TechnologiesHeader data-aos="fade-up">TECHNOLOGIES STACK</TechnologiesHeader>
-      <LineSvg data-aos="fade-up" viewBox="0, 0, 50,50">
+      <TechnologiesHeader >TECHNOLOGIES STACK</TechnologiesHeader>
+      <LineSvg  viewBox="0, 0, 50,50">
         <path
           d="
                  M -155 20
@@ -91,7 +86,7 @@ const Technologies = () => {
       <TechnologiesWrapper>
         {prevID > 0 && <Prev prev={previousBrand} />}
         {technologies.filter((element, index) => index >= prevID && index < nextID).map((technology) => (
-          <TechnologyWrapper data-aos="fade-up" key={technology.id}>
+          <TechnologyWrapper  key={technology.id}>
             {technology.icon}
             <TechnologyTitle>{technology.title}</TechnologyTitle>
           </TechnologyWrapper>

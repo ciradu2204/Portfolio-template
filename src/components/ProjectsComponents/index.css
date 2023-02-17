@@ -1,0 +1,134 @@
+
+.tabs{
+    text-align: center;
+}
+.projectsContainer {
+    display: flex;
+    margin-left: 10px;
+    flex-direction: column;
+}
+
+
+.projectContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.project {
+    display: flex;
+    position: relative;
+    margin: 30px;
+    flex-direction: column;
+    width: min-content;
+    border-radius: 10px;
+    height: 350px;
+    padding: 30px;
+    background: #e1cda9;
+}
+.description{
+    text-overflow: ellipsis;
+}
+
+.project img {
+    width: 250px;
+    object-fit: contain;
+    text-align: center;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.project .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    width: 250px;
+    height: fit-content;
+    opacity: 0;
+    border-radius: 10px;
+    background-color: #e1cda9;
+    transition: 0.5s ease;
+}
+.projectLanguages {
+    margin-top: 10px;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+}
+.projectLanguages span {
+    background: rgba(235, 239, 242, 0.95);
+    padding: 5px 10px;
+    height: fit-content;
+    width: fit-content;
+    font-size: .8rem;
+    border: 3px solid #C0A062;
+    border-radius: 20px;
+}
+
+.overlay p {
+    display: block;
+    width: 80%;
+}
+.overlay div:nth-child(2) {
+    align-self: center;
+}
+.overlay .button{
+    margin: 10px;
+    text-align: center;
+}
+
+
+.overlay .button a {
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #C0A062;
+    width: 100%;
+    padding: 5px;
+    margin: 2px;
+    background: rgba(196, 196, 196, 0.51);
+    cursor: pointer;
+}
+
+#square {
+    position: absolute;
+    top: -10px;
+    z-index: -1;
+    width: 200px;
+    align-self: center;
+    border-radius: 20px;
+    background-color: #C0A062;
+    height: 200px;
+}
+
+.prevIcon,
+.nextIcon {
+    cursor: pointer;
+    color: #C0A062;
+    font-size: 2rem;
+}
+
+.project:hover .overlay {
+    opacity: 1;
+}
+
+.project p {
+    width: 100%;
+}
+
+@media only screen and (max-width: 460px) {
+    .project img {
+        width: 200px;
+    }
+    .project .overlay {
+        width: 200px;
+
+    }
+}

@@ -3,15 +3,25 @@
  import About from './pages/About';
  import Projects from './pages/Projects';
  import Blogs from './pages/Blogs';
- import Project from './components/ProjectsComponents/Project';
  import Blog from './components/BlogComponents/Blog';
  import Home from './pages/Home';
  import CV from './pages/CV';
-
+ import { ThemeProvider, createTheme } from '@mui/material/styles';
  import { Switch, Route } from 'react-router-dom';
 
 function App() {
+
+ const THEME = createTheme({
+  typography: {
+   "fontFamily": "'Prompt', sans-serif",
+   "fontSize": 14,
+   "fontWeightLight": 300,
+   "fontWeightRegular": 400,
+   "fontWeightMedium": 500
+  }
+});
   return (
+    <ThemeProvider theme={THEME}>
     <div className="App">
         <NavBar/>
         <Switch>
@@ -20,10 +30,10 @@ function App() {
           <Route path="/projects" exact  component = {Projects}/>
           <Route path="/blogs" exact component = {Blogs}/>
           <Route path="/cv"  component = {CV}/>
-          <Route path="/projects/:id" component={Project}/>
           <Route path="/blogs/:id" component={Blog}/>
         </Switch>
     </div>
+    </ThemeProvider>
   );
 }
 

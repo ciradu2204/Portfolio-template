@@ -5,3 +5,20 @@
     justify-content: center;
     align-items: center;
 }
+.resumeContainer{
+    margin-top: 20px;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+ }
+
+a.downloadResume{
+    height: max-content;
+    outline: none;
+    border: none;
+    color: black;
+    text-decoration: none;
+    border:1px solid #C0A062;
+    border-radius: 5px;
+    padding: 7px;
+}

@@ -1,9 +1,7 @@
 
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import { LineSvg } from "../Services/servicesElements";
 import { Wrapper, FormWrapper, FormHeader, ElementWrapper, Label, Input, TextArea, Error, Success } from "./ContactFormElements";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
@@ -92,16 +90,14 @@ const ContactForm = () => {
         }
     }
 
-    useEffect(() => {
-         AOS.init({ duration: 1000 })
-    }, [])
+ 
 
 
 
     return (
         <Wrapper>
-            <FormHeader data-aos="fade-up">CONTACT ME</FormHeader>
-            <LineSvg data-aos="fade-up" viewBox="0, 0, 50,50">
+            <FormHeader>CONTACT ME</FormHeader>
+            <LineSvg  viewBox="0, 0, 50,50">
                 <path
                     d="
                  M -70 20
@@ -112,21 +108,21 @@ const ContactForm = () => {
             </LineSvg>
             {success ? <Success>Your Message was successfully sent!</Success> : null}
             <FormWrapper onSubmit={handleSubmit}>
-                <ElementWrapper id={1} data-aos="fade-up">
+                <ElementWrapper id={1} >
                     <Label>NAME</Label>
                     <Input type="text" name="from_name" value={toSend.from_name} onChange={handleChange} />
                 </ElementWrapper>
                 {error.nameError ? (
                     <Error>Your Name is Required</Error>) : null
                 }
-                <ElementWrapper id={2} data-aos="fade-up">
+                <ElementWrapper id={2}  >
                     <Label>EMAIL</Label>
                     <Input type="email" name="reply_to" value={toSend.reply_to} onChange={handleChange} />
                 </ElementWrapper>
                 {error.reply_toError ?
                     (<Error>Your Email is Required</Error>) : null
                 }
-                <ElementWrapper id={3} data-aos="fade-up">
+                <ElementWrapper id={3}  >
                     <Label>MESSAGE</Label>
                     <TextArea name="message" value={toSend.message} onChange={handleChange}></TextArea>
                 </ElementWrapper>

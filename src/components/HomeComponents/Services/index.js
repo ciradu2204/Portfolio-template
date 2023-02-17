@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ServicesWrapper, ServicesHeader, ServiceWrapper, ServiceTitle, Wrapper, LineSvg } from './servicesElements';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import backend from "../../../img/backend.png"
 import frontend from "../../../img/front-end.png"
 import technicalWriting from "../../../img/writing.png"
@@ -27,15 +25,11 @@ const Services = () => {
         }
     ]
 
-    useEffect(() => {
-        AOS.init({ duration: 1000 })
-    }, [])
-
     return (
         <>
-            <Wrapper data-aos="fade-up">
-            <ServicesHeader data-aos="fade-up">WHAT I DO</ServicesHeader>
-            <LineSvg data-aos="fade-up" viewBox="0, 0, 50,50">
+            <Wrapper >
+            <ServicesHeader >WHAT I DO</ServicesHeader>
+            <LineSvg  viewBox="0, 0, 50,50">
                 <path
                 d="
                  M -50 20
@@ -47,7 +41,7 @@ const Services = () => {
             </LineSvg>
             <ServicesWrapper>
                 {services.map((service) => (
-                    <ServiceWrapper data-aos="fade-up" key={service.id} >
+                    <ServiceWrapper  key={service.id} >
                         {service.img}
                         <ServiceTitle>{service.title}</ServiceTitle>
                     </ServiceWrapper>
