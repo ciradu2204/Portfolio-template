@@ -1,0 +1,26 @@
+
+.card{
+    padding:10px;
+    max-width: 300px;
+    background-color: #e1cda9 !important;
+
+}
+.eventsContainer{
+    margin: 30px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 2%;
+ }
+
+ .icon{
+    align-self: center;
+    font-size: 2rem;
+    cursor: pointer;
+ }
+
+ @media only screen and (max-width: 460px) {
+    .card  {
+        max-width: 200px;
+    }
+  
+}
