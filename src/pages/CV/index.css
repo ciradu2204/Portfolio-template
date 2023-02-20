@@ -22,3 +22,10 @@ a.downloadResume{
     border-radius: 5px;
     padding: 7px;
 }
+
+@media screen and (max-width: 460px) {
+    .resumeContainer{
+         flex-direction: column;
+     }
+
+}
