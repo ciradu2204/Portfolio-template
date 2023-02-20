@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Footer from "../SharedComponents/Footer";
+import Footer from "../Shared/Footer";
 import "./index.css";
 import sheMentors from "../../img/projects/sheMentorsAfrica.png";
 import todo from "../../img/projects/todoApp.png";
