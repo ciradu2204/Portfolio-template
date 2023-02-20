@@ -41,7 +41,7 @@ const BlogHome = () => {
               const blog = {
                     "image": data.social_image,
                     "title": blogPerId.data.title,
-                    "description":blogPerId.data.body_html ,
+                    "description":blogPerId.data.body_markdown,
                     "width": width
               }
               setBlogs(blogs => [...blogs, blog]);

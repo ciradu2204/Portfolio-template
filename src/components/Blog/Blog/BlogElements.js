@@ -73,9 +73,21 @@ letter-spacing: 0.3em;
 margin:0;
 color:black;
 `
-export const BlogDescription = styled.p`
+export const BlogDescription = styled.div`
   width:90%;
   padding:20px;
   margin:0;
   line-height:25px;
+  & img {
+    width: 100%;
+    height: 400px;
+    object-fit:contain;
+  }
+
+  & h2:first-of-type{
+    display: none;
+  }
+  & ol:first-of-type{
+    display:none;
+  }
 `

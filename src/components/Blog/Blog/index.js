@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useParams, useLocation } from "react-router";
 import { nanoid } from "nanoid";
-import parse from 'html-react-parser';
 import Footer from "../../Shared/Footer";
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 
 import { BlogMainWrapper, BlogImage, Prev, PrevBlogName, BlogWrapper, BlogTitle, BlogDescription, Next, NextBlogName } from "./BlogElements";
 const Blog = () => {
@@ -81,7 +82,7 @@ const Blog = () => {
                     <BlogWrapper>
                         <BlogImage src={blog.image} />
                         <BlogTitle >{blog.title.toUpperCase()}</BlogTitle>
-                        <BlogDescription>{parse(blog.description)} </BlogDescription>
+                        <BlogDescription><ReactMarkdown children={blog.description} rehypePlugins={[rehypeRaw]}/></BlogDescription>
                     </BlogWrapper>
                     {id < blogs.length-1 && <Next onClick={NextHandle} onMouseOver={handleMouseNextOver} onMouseOut={handleMouseNextOut} />}
                     {id < blogs.length-1 && mouseOverNext && titleNext ? <NextBlogName>{titleNext}</NextBlogName> : null}
