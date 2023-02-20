@@ -2,7 +2,7 @@
 .card{
     padding:10px;
     max-width: 300px;
-    background-color: #e1cda9 !important;
+    background-color: whitesmoke !important;
 
 }
 .eventsContainer{
@@ -16,6 +16,15 @@
     align-self: center;
     font-size: 2rem;
     cursor: pointer;
+ }
+
+ .typography{
+    color: #C0A062;
+    font-weight: bolder;
+    font-size: 0.9rem;
+ }
+ .cardActions{
+    color:#C0A062;
  }
 
  @media only screen and (max-width: 460px) {

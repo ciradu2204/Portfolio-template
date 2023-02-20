@@ -4,9 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActions } from '@mui/material';
-import howtothrive from "../../img/events/howtothriveintech.png";
+import howtothrive from "../../img/events/howtothriveintech.jpeg";
 import myhumblejourney from "../../img/events/myhumbleJourney.png";
 import contributhon from "../../img/events/contributonwrapup.jpeg";
+import openingCeremony from "../../img/events/openingceremony.jpeg"
 
 import "./index.css"
 import { GrNext, GrPrevious } from 'react-icons/gr';
@@ -45,7 +46,7 @@ const Event = () => {
         },
         {
            title: "GDSC ALC Info Session",
-           img: "",
+           img: openingCeremony,
            description: "An info session to introduce students to what is GDSC(Google Developer Student Club) and the different opportunities we would be sharing throughout the year 2021.",
            attendees: 25,
         },
@@ -82,19 +83,19 @@ export function EventTemplate({event}) {
     <Card className="card">
         <CardMedia
           component="img"
-          height="150"
+          height="200"
           image={event.img}
           alt={event.title}
         />
         <CardContent className='cardContent'>
-          <Typography gutterBottom variant="p" component="div">
+          <Typography gutterBottom variant="p" component="div" className='typography' >
             {event.title}
           </Typography>
           <Typography variant="body2" >
             {event.description}
           </Typography>
         </CardContent>
-      <CardActions>
+      <CardActions className='cardActions'>
         <Button size="small" color="inherit">
           {event.attendees} Attendees
         </Button>

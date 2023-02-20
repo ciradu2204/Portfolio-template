@@ -43,7 +43,7 @@ height:100%;
 width:100%;
 outline:none;
 cursor:pointer;
-font-size: 1.5rem;
+font-size: 1rem;
 background: transparent;
 -webkit-appearance:none;
 border:none;
@@ -82,7 +82,7 @@ left:5px;
 height:100%;
 width:100%;
 border:none;
-font-size:1.5rem;
+font-size:1rem;
 outline:none;
 `
 
@@ -90,7 +90,7 @@ export const Error = styled.h3`
 color:red;
 width: 48%;
 margin:0;
-font-size:1.5rem;
+font-size:1rem;
 align-self:center;
 font-weight:bold;
 `
@@ -99,7 +99,7 @@ export const Success = styled.h3`
 color:green;
 width: 100%;
 margin:0;
-font-size:1.5rem;
+font-size:1rem;
 text-align:center;
 font-weight:bold;
 `

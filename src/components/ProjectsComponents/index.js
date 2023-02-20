@@ -280,7 +280,7 @@ export const ProjectTemplate = ({ project }) => {
         <div className="button">
           {project.url && (
             <a target="_blank" href={project.url} rel="noreferrer">
-              Visit application
+              Visit App
             </a>
           )}
         </div>
