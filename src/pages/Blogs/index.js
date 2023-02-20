@@ -1,4 +1,4 @@
-import BlogHome from "../../components/BlogComponents/BlogHomeComponents"
+import BlogHome from "../../components/Blog/BlogHomeComponents"
 import {BlogsHeader, BlogsIntro } from "./BlogsElements";
 
 

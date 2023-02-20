@@ -1,4 +1,4 @@
-import  Bio  from "../../components/AboutComponents/Bio"
+import  Bio  from "../../components/About/Bio"
 import { AboutHeader } from "./AboutElements"
 
  const About = () =>{

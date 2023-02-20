@@ -1,4 +1,4 @@
-import  ProjectsHome from "../../components/ProjectsComponents/index";
+import  ProjectsHome from "../../components/Projects/index";
 import { ProjectsHeader, ProjectsIntro } from "./ProjectsElements";
 
 

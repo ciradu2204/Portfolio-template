@@ -1,6 +1,6 @@
 import { GrDownload } from 'react-icons/gr';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
-import Footer from '../../components/SharedComponents/Footer';
+import Footer from '../../components/Shared/Footer';
 import "./index.css"
 import resume from "../../img/MyResume.pdf"
 const CV = () => {

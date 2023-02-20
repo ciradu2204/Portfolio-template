@@ -1,6 +1,6 @@
 import {EventsHeader, EventsIntro} from "./EventsElement"
 import EventsHome from "../../components/Events"
-import Footer from "../../components/SharedComponents/Footer"
+import Footer from "../../components/Shared/Footer"
 const Events = () => {
 
     return (

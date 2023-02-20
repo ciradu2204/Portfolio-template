@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import SocialMediaChannels from '../../components/SharedComponents/SocialMedias'
-import Technologies from '../../components/HomeComponents/Technologies';
+import SocialMediaChannels from '../../components/Shared/SocialMedias'
+import Technologies from '../../components/Home/Technologies';
 import {DownIcon, Wrapper } from './HomeElements';
-import Form from '../../components/HomeComponents/ContactForm'
-import Footer from '../../components/SharedComponents/Footer';
-import Header from '../../components/HomeComponents/Header'
-import Services from '../../components/HomeComponents/Services'
+import Form from '../../components/Home/ContactForm'
+import Footer from '../../components/Shared/Footer';
+import Header from '../../components/Home/Header'
+import Services from '../../components/Home/Services'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 const Home = () => {
