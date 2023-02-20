@@ -28,5 +28,11 @@ a.downloadResume{
     .resumeContainer{
          flex-direction: column;
      }
+     a.downloadResume{
+        margin: 20px;
+     }
+     .page{
+      overflow-x: scroll;
+     }
 
 }
