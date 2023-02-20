@@ -34,7 +34,7 @@
 }
 
 .project img {
-    width: 200px;
+    width: 250px;
     object-fit: contain;
     text-align: center;
     height: 150px;
@@ -50,7 +50,7 @@
     left: 0;
     right: 0;
     padding: 30px;
-    width: 200px;
+    width: 250px;
     height: 350px;
     overflow-y: scroll;
     opacity: 0;
@@ -124,4 +124,13 @@
 
 .project p {
     width: 100%;
+}
+
+@media only screen and (max-width: 460px){
+    .project img{
+        width: 200px;
+    }
+    .project .overlay{
+        width: 200px;
+    }
 }
