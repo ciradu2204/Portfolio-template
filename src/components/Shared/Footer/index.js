@@ -1,12 +1,12 @@
 import SocialMedia from "../SocialMedias";
-import { FooterWrapper, FooterTitle, Copyright } from "./FooterElement";
-
+import { FooterWrapper, FooterLogo, Copyright } from "./FooterElement";
+import logo  from "../../../img/logo.png"
 const Footer = ({direction, color, copyright,gap}) =>{
 
     return(
      <>
       <FooterWrapper gap={gap}>
-      <FooterTitle>Cynthia Iradukunda</FooterTitle>
+      <FooterLogo src={logo}/>
       <Copyright>{copyright}</Copyright>
       <SocialMedia flexDirection={direction} iconColor={color}/>
       </FooterWrapper>

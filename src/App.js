@@ -1,17 +1,19 @@
  import './App.css';
- import NavBar  from './components/SharedComponents/NavBar';
+ import NavBar  from './components/Shared/NavBar';
  import About from './pages/About';
  import Projects from './pages/Projects';
  import Blogs from './pages/Blogs';
- import Blog from './components/BlogComponents/Blog';
+ import Blog from './components/Blog/Blog';
  import Home from './pages/Home';
  import CV from './pages/CV';
  import { ThemeProvider, createTheme } from '@mui/material/styles';
  import { Switch, Route } from 'react-router-dom';
  import Events from './pages/Events';
+ import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function App() {
-
+ const location = useLocation()
  const THEME = createTheme({
   typography: {
    "fontFamily": "'Prompt', sans-serif",
@@ -20,6 +22,15 @@ function App() {
    "fontWeightRegular": 400,
    "fontWeightMedium": 500
   }
+});
+
+const capitalizeFirstLetter = (title) => {
+  return title.charAt(0).toUpperCase() + title.slice(1);
+}
+
+useEffect(() => {
+  let title = location.pathname
+  document.title = capitalizeFirstLetter(title.substring(1));
 });
   return (
     <ThemeProvider theme={THEME}>

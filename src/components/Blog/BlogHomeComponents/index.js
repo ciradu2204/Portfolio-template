@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import axios from 'axios';
-import Loader from "../../SharedComponents/Loader";
+import Loader from "../../Shared/Loader";
 import { BlogsWrapper, BlogWrapper, BlogImage, BlogTitle, ReadMore } from './BlogHomeElements'
 import { nanoid } from "nanoid";
-import Footer from "../../SharedComponents/Footer";
+import Footer from "../../Shared/Footer";
 
 const BlogHome = () => {
     const [loading, setLoading] = useState(false);
