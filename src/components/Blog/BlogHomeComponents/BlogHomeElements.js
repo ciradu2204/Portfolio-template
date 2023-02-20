@@ -43,7 +43,7 @@ ${BlogWrapper}:hover &{
 export const BlogTitle = styled.div`
 position: absolute;
 line-height: 2rem;
-font-size: ${props => props.id === 1 ? "20px" : "initial"};
+font-size: ${props => props.id === 1 ? "1rem" : "initial"};
 font-weight: ${props => props.id === 1 ? "bolder" : "700"};
 letter-spacing: 0.3em;
 bottom: ${props => props.id === 1 ? "10%" : "10%"}; 

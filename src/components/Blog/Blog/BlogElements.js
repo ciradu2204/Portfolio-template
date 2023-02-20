@@ -19,19 +19,19 @@ align-items:center;
 export const Prev = styled(GrFormPrevious)`
 color: #C0A062;
 cursor:pointer;
-position: fixed; 
+position: fixed;
 top: 55%;
 left:5px;
-font-size:20px;
+font-size:1rem;
 `
 
 export const Next  = styled(GrFormNext)`
 color: #C0A062;
 cursor:pointer;
-position: fixed; 
+position: fixed;
 top: 55%;
 right:5px;
-font-size:20px;
+font-size:1rem;
 
 `
 export const BlogImage = styled.img`
@@ -40,11 +40,11 @@ height:300px;
 `
 export const NextBlogName = styled.h4`
 position: fixed;
-padding:10px; 
-top:51%; 
+padding:10px;
+top:51%;
 right:2.5%;
-font-weight:500; 
-font-size: 15px;
+font-weight:500;
+font-size: 1rem;
 background-color: #E5E5E5;
 
 @media (max-width: 1000px) {
@@ -54,11 +54,11 @@ background-color: #E5E5E5;
 
  export const PrevBlogName = styled.h4`
  position: fixed;
- padding:10px; 
- top:51%; 
+ padding:10px;
+ top:51%;
  left:2.5%;
- font-weight:500; 
- font-size: 15px;
+ font-weight:500;
+ font-size: 1rem;
  background-color: #E5E5E5;
 
  @media (max-width: 1000px) {
@@ -66,8 +66,8 @@ background-color: #E5E5E5;
 }
 `
 export const BlogTitle = styled.h3`
-font-size: 25px;
-line-height: 52px;
+font-size: 0.9rem;
+line-height: 1rem;
 text-align: center;
 letter-spacing: 0.3em;
 margin:0;
