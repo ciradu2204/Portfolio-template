@@ -6,7 +6,7 @@ import todo from "../../img/projects/todoApp.png";
 import pigGame from "../../img/projects/pigGame.png";
 import chrisProject from "../../img/projects/chrisProject.jpeg";
 import Jenkins from "../../img/projects/jenkins.png";
-import spaceInvaders from "../../imgs/projects/spaceInvaders.png"
+import spaceInvaders from "../../img/projects/spaceInvaders.png"
 import weatherAndDisaters from "../../img/projects/weather&Disaster.png";
 import weatherCenter from "../../img/projects/weatherCenter.png";
 import SmartShoppingCart from "../../img/projects/smartShoppingApp.jpeg";
