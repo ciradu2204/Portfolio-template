@@ -41,7 +41,9 @@ const Project = () => {
       description: "A classic arcade game you can play online for free",
       technologies: [
         "HTML", "CSS", "JavaScript"
-      ]
+      ],
+      url: "ciradu2204.github.io/Space-Invaders/",
+      githubUrl:"https://github.com/ciradu2204/Space-Invaders"
     },
     {
       imgSrc: sheMentors,
