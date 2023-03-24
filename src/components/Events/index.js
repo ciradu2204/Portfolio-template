@@ -28,7 +28,7 @@ const Event = () => {
     const events = [
         {title: "She Code Africa Contributhon First Cohort Graduation",
         img: contributhon,
-        description: "During the contributhon first cohort graduation, I gave a speech representing all the women who were part of the first cohort. The speech aimed to thank the organisers and open source organisations which were part of the cohort",
+        description: "During the contributhon first cohort graduation, I gave a speech representing all the women who were part of the first cohort. The speech aimed to thank the organisers and open source organisations who were part of the cohort",
         attendees: 40
         }
         ,
