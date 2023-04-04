@@ -8,7 +8,7 @@ import howtothrive from "../../img/events/howtothriveintech.jpeg";
 import myhumblejourney from "../../img/events/myhumbleJourney.png";
 import contributhon from "../../img/events/contributonwrapup.jpeg";
 import openingCeremony from "../../img/events/openingceremony.jpeg";
-import IWDKigali2023 from "../../img/events/IWDKigali2023.jpeg"
+import IWDKigali2023 from "../../img/events/IWDKigali2023.jpg"
 
 import "./index.css"
 import { GrNext, GrPrevious } from 'react-icons/gr';
@@ -30,8 +30,8 @@ const Event = () => {
         {
           title: "IWD Kigali 2023",
           img: IWDKigali2023,
-          description: "As WTM ambassador, I organized an event to celebrate the international women's day in Kigali. The event had both technical and non technical sessions",
-          attendees: 70
+          description: "As WTM ambassador, I organized an event to celebrate the international women's day in Kigali. The event had technical, non technical sessions, and panel discussions",
+          attendees: 100
         },
         {title: "She Code Africa Contributhon First Cohort Graduation",
         img: contributhon,
