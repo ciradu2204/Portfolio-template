@@ -42,7 +42,7 @@ const Project = () => {
       technologies: [
         "HTML", "CSS", "JavaScript"
       ],
-      url: "ciradu2204.github.io/Space-Invaders/",
+      url: "https://ciradu2204.github.io/Space-Invaders/",
       githubUrl:"https://github.com/ciradu2204/Space-Invaders"
     },
     {
