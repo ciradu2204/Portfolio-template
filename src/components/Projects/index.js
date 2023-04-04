@@ -163,7 +163,7 @@ const Project = () => {
         setStartGPIndex((prev) => prev + 1);
       }
     } else {
-      if (endPSIndex < GroupProjects.length - 1) {
+      if (endPSIndex < PersonalProjects.length - 1) {
         setEndPSIndex((prev) => prev + 1);
         setStartPSIndex((prev) => prev + 1);
       }
