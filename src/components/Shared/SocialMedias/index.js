@@ -3,24 +3,24 @@ import {Mail, Twitter, Wrapper, Link, LinkedIn, Github} from './socialMediaEleme
 
 const SocialMedia = ({direction, color}) =>{
    let channels = {
-        Twitter: 'https://twitter.com/IraduCynthia',
-        LinkedIn: 'https://www.linkedin.com/in/ciradu2204/',
-        Email: 'ciradukunda2204@gmail.com',
-        Github: 'https://github.com/ciradu2204',
+        twitter: 'https://twitter.com/IraduCynthia',
+        linkedIn: 'https://www.linkedin.com/in/ciradu2204/',
+        email: 'ciradukunda2204@gmail.com',
+        github: 'https://github.com/ciradu2204',
     };
 
     return (
           <Wrapper flexDirection={direction} >
-          <Link target="_blank" href={channels.Email}  >
+          <Link href={`mailto:${channels.email}`}>
           <Mail iconcolor={color}/>
           </Link>
-          <Link target="_blank" href={channels.Twitter}>
+          <Link target="_blank" href={channels.twitter}>
           <Twitter iconcolor={color} />
           </Link>
-          <Link target="_blank" href={channels.LinkedIn}>
+          <Link target="_blank" href={channels.linkedIn}>
           <LinkedIn iconcolor={color} />
           </Link>
-          <Link target="_blank" href={channels.Github}>
+          <Link target="_blank" href={channels.github}>
           <Github iconcolor={color} />
           </Link>
           </Wrapper>
