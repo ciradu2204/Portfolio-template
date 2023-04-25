@@ -30,12 +30,8 @@ const Technologies = () => {
       icon: <GrReactjs fontSize={"3rem"}/>,
      },
      {id: 2,
-      title: "AWS",
+      title: "AWS Amplify",
       icon: <FaAws fontSize={"3rem"}/>,
-     },
-     {id: 3,
-      title: "ExpressJs",
-      icon: <img src={expressJsIcon} alt="expressJs Icon" style={{height:"3rem", width:"3rem"}} />
      },
      {
        id: 4,

@@ -53,6 +53,7 @@ const Project = () => {
       technologies: [
         "React",
         "JavaScript",
+        "Material UI",
         "AWS Amplify",
         "DynamoDb",
         "ExpressJs",
