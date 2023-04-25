@@ -6,7 +6,6 @@ import { LineSvg } from "../Services/servicesElements";
 import { GrReactjs } from "react-icons/gr";
 import { FaAws, FaCss3, FaHtml5} from "react-icons/fa";
 import {DiJavascript1} from "react-icons/di"
-import expressJsIcon from "../../../img/expressJsIcon.png"
 
 const Technologies = () => {
   const initializeNextId = () => {

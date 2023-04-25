@@ -1,7 +1,6 @@
 import React from 'react';
 import { ServicesWrapper, ServicesHeader, ServiceWrapper, ServiceTitle, Wrapper, LineSvg } from './servicesElements';
 import backend from "../../../img/backend.png"
-import frontend from "../../../img/front-end.png"
 import technicalWriting from "../../../img/writing.png"
 
 
