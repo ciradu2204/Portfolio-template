@@ -8,7 +8,7 @@ const Blogs = () => {
           <>
  
                     <BlogsHeader>BLOGS</BlogsHeader>
-                    <BlogsIntro>The following blogs share knowledge and experience that I have acquired through the different programs, courses, and books I have read.  </BlogsIntro>
+                    <BlogsIntro>The following blogs share knowledge gained and experience that I have acquired through participating in different programs.  </BlogsIntro>
                     <BlogHome />
  
           </>
