@@ -9,6 +9,8 @@ import myhumblejourney from "../../img/events/myhumbleJourney.png";
 import contributhon from "../../img/events/contributonwrapup.jpeg";
 import openingCeremony from "../../img/events/openingceremony.jpeg";
 import IWDKigali2023 from "../../img/events/IWDKigali2023.jpg"
+import AWSUGLaunchEvent from "../../img/events/AWSUGLaunchEvent.png"
+import IWDEACEvent from "../../img/events/IWDEACEvent.jpeg"
 
 import "./index.css"
 import { GrNext, GrPrevious } from 'react-icons/gr';
@@ -27,14 +29,30 @@ const Event = () => {
 
 
     const events = [
-        {
+      {
+        title: "AWS User Group Launch Event",
+        img: AWSUGLaunchEvent,
+        date: "13th May 2023",
+        description: "As an AWS User Group lead, I worked together with other organisers to organize our first event which marked the beginning of AWS User Group in Kigali. We had amazing speakers and guests from different companies including AWS and Safaricom ",
+        attendees: 20
+      },
+      {
+       title: "IWD EAC Event",
+       date: "6th May 2023",
+       img: IWDEACEvent,
+       description: "Together with other WTM ambassadors from EAC, we organized an event to celebrate women in our communities and discuss on how we can do better.In addition, I gave a talk on OSS opportunites for Early Career in Tech ",
+       attendees: 25
+      },
+      {
           title: "IWD Kigali 2023",
+          date: "1st April 2023",
           img: IWDKigali2023,
           description: "As WTM ambassador, I organized an event to celebrate the international women's day in Kigali. The event had technical, non technical sessions, and panel discussions",
           attendees: 100
         },
         {title: "She Code Africa Contributhon First Cohort Graduation",
         img: contributhon,
+        date: "1st May 2021",
         description: "During the contributhon first cohort graduation, I gave a speech representing all the women who were part of the first cohort. The speech aimed to thank the organisers and open source organisations who were part of the cohort",
         attendees: 40
         }
@@ -42,12 +60,14 @@ const Event = () => {
         {
             title: "How to Thrive in Tech as a Woman",
             img: howtothrive,
+            date: "25th March 2021",
             description: "To celebrate the international woman's day, I invited some of the alumni who are working well in tech to share tips and advice on how current students can better perform well in tech.",
             attendees: 15,
         },
         {
             title: "My humble Journey to Google",
             img: myhumblejourney,
+            date: "11th Dec 2020",
             description: "Eunice Allela and Ebenezer Graham, recent graduates, and full-time Googlers shared their experience in college and advice on what students can do to get a good internship or job after college.",
             attendees: 23
         },
@@ -56,6 +76,7 @@ const Event = () => {
            img: openingCeremony,
            description: "An info session to introduce students to what is GDSC(Google Developer Student Club) and the different opportunities we would be sharing throughout the year 2021.",
            attendees: 25,
+           date: "2nd OCT 2020"
         },
     ]
 
@@ -95,8 +116,11 @@ export function EventTemplate({event}) {
           alt={event.title}
         />
         <CardContent className='cardContent'>
-          <Typography gutterBottom variant="p" component="div" className='typography' >
+          <Typography gutterBottom variant="h6" component="div" className='typography' >
             {event.title}
+          </Typography>
+          <Typography gutterBottom variant="p" component="div" className='typography' >
+            {event.date}
           </Typography>
           <Typography variant="body2" >
             {event.description}
