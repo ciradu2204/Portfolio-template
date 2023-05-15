@@ -116,7 +116,7 @@ export function EventTemplate({event}) {
           alt={event.title}
         />
         <CardContent className='cardContent'>
-          <Typography gutterBottom variant="h6" component="div" className='typography' >
+          <Typography gutterBottom variant="p" component="div" className='typography' >
             {event.title}
           </Typography>
           <Typography gutterBottom variant="p" component="div" className='typography' >
