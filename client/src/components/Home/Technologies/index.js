@@ -4,8 +4,10 @@ import Next from './nextIcon';
 import { TechnologiesHeader, TechnologiesWrapper, TechnologyWrapper, TechnologyTitle } from "./TechnologiesElements";
 import { LineSvg } from "../Services/servicesElements";
 import { GrReactjs } from "react-icons/gr";
+import {SiExpress} from "react-icons/si"
 import { FaAws, FaCss3, FaHtml5} from "react-icons/fa";
 import {DiJavascript1} from "react-icons/di"
+import {FiDatabase} from "react-icons/fi"
 
 const Technologies = () => {
   const initializeNextId = () => {
@@ -32,6 +34,10 @@ const Technologies = () => {
       title: "AWS Amplify",
       icon: <FaAws fontSize={"3rem"}/>,
      },
+     {id: 3,
+      title: "ExpressJs",
+      icon: <SiExpress fontSize={"3rem"}/>,
+     },
      {
        id: 4,
        title: "CSS3",
@@ -48,7 +54,19 @@ const Technologies = () => {
       title: "JavaScript",
       icon: <DiJavascript1 fontSize={"3rem"}/>
 
-    }
+    },
+    { id: 7,
+      title: "MySQL",
+      icon: <FiDatabase fontSize={"3rem"}/>,
+    },
+    { id: 8,
+      title: "DynamoDb",
+      icon: <FiDatabase fontSize={"3rem"}/>,
+    },
+    { id: 9,
+      title: "MongoDb",
+      icon: <FiDatabase fontSize={"3rem"}/>,
+    },
   ]
   const previousBrand = () => {
     if (prevID > 0) {
