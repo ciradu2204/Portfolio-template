@@ -1,7 +1,7 @@
 import React from 'react';
 import { ServicesWrapper, ServicesHeader, ServiceWrapper, ServiceTitle, Wrapper, LineSvg } from './servicesElements';
 import backend from "../../../img/backend.png"
-import technicalWriting from "../../../img/writing.png"
+import frontend from "../../../img/frontend.png"
 
 
 const Services = () => {
@@ -11,11 +11,11 @@ const Services = () => {
     }
     let services = [
         {id: 1,
-         img: <img src={backend} alt="Backend" style={serviceImg}/>,
+         img: <img src={frontend} alt="Backend" style={serviceImg}/>,
          title: "Front-end Development"
         },
         {id: 3,
-         img: <img src={technicalWriting} alt="technical writing" style={serviceImg}/>,
+         img: <img src={backend} alt="technical writing" style={serviceImg}/>,
          title: "Backend Development"
         }
     ]

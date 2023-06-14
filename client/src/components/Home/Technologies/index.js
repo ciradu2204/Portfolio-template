@@ -8,6 +8,7 @@ import {SiExpress} from "react-icons/si"
 import { FaAws, FaCss3, FaHtml5} from "react-icons/fa";
 import {DiJavascript1} from "react-icons/di"
 import {FiDatabase} from "react-icons/fi"
+import {SiTypescript} from "react-icons/si"
 
 const Technologies = () => {
   const initializeNextId = () => {
@@ -55,15 +56,21 @@ const Technologies = () => {
       icon: <DiJavascript1 fontSize={"3rem"}/>
 
     },
-    { id: 7,
+    {
+      id: 7,
+      title: "TypeScript",
+      icon: <SiTypescript fontSize={"3rem"}/>
+
+    },
+    { id: 8,
       title: "MySQL",
       icon: <FiDatabase fontSize={"3rem"}/>,
     },
-    { id: 8,
+    { id: 9,
       title: "DynamoDb",
       icon: <FiDatabase fontSize={"3rem"}/>,
     },
-    { id: 9,
+    { id: 10,
       title: "MongoDb",
       icon: <FiDatabase fontSize={"3rem"}/>,
     },
