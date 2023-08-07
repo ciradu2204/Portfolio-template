@@ -27,7 +27,7 @@ const Services = () => {
         },
         {id: 4,
          img: <img src={technicalWriting} alt="technical writing" style={serviceImg}/>,
-         title: "Technical writing"
+         title: "Backend Development"
         }
     ]
 
