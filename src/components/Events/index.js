@@ -106,8 +106,8 @@ const Event = () => {
     return (
       <div className='eventsContainer'>
         {startIndex > 0 &&<GrPrevious onClick={handlePrev} className="icon"/>}
-      {events.filter((element, index) => index >= startIndex && index <=endIndex).map((event) => (
-        <EventTemplate event={event} />
+      {events.filter((element, index) => index >= startIndex && index <=endIndex).map((event, index) => (
+        <EventTemplate event={event} key={index}/>
       ))}
          {endIndex < events.length -1 && <GrNext  onClick={handleNext} className="icon"/>}
        </div>

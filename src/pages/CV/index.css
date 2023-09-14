@@ -13,6 +13,10 @@
     justify-content: center;
  }
 
+ .resumeContainer > div:first-child{
+    display: flex;
+ }
+
 a.downloadResume{
     height: max-content;
     outline: none;
