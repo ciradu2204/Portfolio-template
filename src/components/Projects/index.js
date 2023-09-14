@@ -36,16 +36,6 @@ const Project = () => {
 
   const PersonalProjects = [
     {
-      imgSrc: spaceInvaders,
-      title: "Space Invaders Game",
-      description: "A classic arcade game you can play online for free",
-      technologies: [
-        "HTML", "CSS", "JavaScript"
-      ],
-      url: "https://ciradu2204.github.io/Space-Invaders/",
-      githubUrl:"https://github.com/ciradu2204/Space-Invaders"
-    },
-    {
       imgSrc: sheMentors,
       title: "She Mentors Africa",
       description:
@@ -60,6 +50,16 @@ const Project = () => {
       ],
       url: "https://dev.d355u8qyf4162x.amplifyapp.com/",
       githubUrl: "https://github.com/ciradu2204/SheMentorsAfrica",
+    },
+    {
+      imgSrc: spaceInvaders,
+      title: "Space Invaders Game",
+      description: "A classic arcade game you can play online for free",
+      technologies: [
+        "HTML", "CSS", "JavaScript"
+      ],
+      url: "https://ciradu2204.github.io/Space-Invaders/",
+      githubUrl:"https://github.com/ciradu2204/Space-Invaders"
     },
     {
       imgSrc: todo,
